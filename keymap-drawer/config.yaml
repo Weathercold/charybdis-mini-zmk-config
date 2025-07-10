@@ -49,7 +49,23 @@ draw_config:
 parse_config:
   preprocess: true
   skip_binding_parsing: false
-  raw_binding_map: {}
+  raw_binding_map:
+    "&bootloader": "BOOTLDR"
+    "&mkp RCLK": "RCLK"
+    "&mkp LCLK": "LCLK"
+    "&mkp MCLK": "MCLK"
+    "&mkp MB4": "MB4"
+    "&mkp MB5": "MB5"
+    "&mmv MOVE_UP": "MOVE UP"
+    "&mmv MOVE_DOWN": "MOVE D"
+    "&mmv MOVE_LEFT": "MOVE L"
+    "&mmv MOVE_RIGHT": "MOVE R"
+    "&msc MOVE_UP": "WHEEL D"
+    "&msc MOVE_DOWN": "WHEEL U"
+    "&msc MOVE_LEFT": "WHEEL L"
+    "&msc MOVE_RIGHT": "WHEEL R"
+    "&caps_word": "CAPS WORD"
+    "&studio_unlock": "STUDIO UNLOCK"
   sticky_label: sticky
   toggle_label: toggle
   tap_toggle_label: tap-toggle
@@ -58,19 +74,21 @@ parse_config:
     type: trans
   mark_alternate_layer_activators: false
   modifier_fn_map:
-    left_ctrl: Ctl
-    right_ctrl: Ctl
-    left_shift: Sft
-    right_shift: Sft
-    left_alt: Alt
-    right_alt: AGr
-    left_gui: Gui
-    right_gui: Gui
-    keycode_combiner: "{mods}+ {key}"
+    left_ctrl: LC
+    right_ctrl: RC
+    left_shift: LS
+    right_shift: RS
+    left_alt: LA
+    right_alt: RA
+    left_gui: LG
+    right_gui: RG
+    keycode_combiner: "{mods}+{key}"
     mod_combiner: "{mod_1}+{mod_2}"
     special_combinations:
-      left_ctrl+left_alt+left_gui+left_shift: Hyper
-      left_ctrl+left_alt+left_shift: Meh
+      left_ctrl+left_alt+left_gui+left_shift: LH
+      right_ctrl+right_alt+right_gui+right_shift: RH
+      left_ctrl+left_alt+left_shift: LM
+      right_ctrl+right_alt+right_shift: RM
   qmk_remove_keycode_prefix:
     - KC_
   qmk_keycode_map:
@@ -209,8 +227,9 @@ parse_config:
     LA(LC(T)): "SHELL"
     C_AC_SEARCH: "SEARCH"
     LG(E): "WINDOW"
-    LC(LA(LEFT_SHIFT)): "MEH"
-    LA(LC(LG(LEFT_SHIFT))): "HYPER"
+    LC(LA(LSHFT)): "LMEH"
+    LG(LC(LA(LSHFT))): "LHYPR"
+    RG(RC(RA(RSHFT))): "RHYPR"
     LC(F10): "ALL WIN"
     LS(LC(H)): "PANE ◀"
     LS(LC(J)): "PANE ▲"
@@ -223,8 +242,8 @@ parse_config:
     C_AC_COPY: "COPY"
     C_AC_PASTE: "PASTE"
     C_AL_COFFEE: "LOCK"
-    PRINTSCREEN: "PRINT SCREEN"
-    BACKSPACE: "BACK SPACE"
+    PSCRN: "PRINTSCREEN"
+    BACKSPACE: "BACKSPACE"
     LC(LA(E)): "FIT"
     LS(DELETE): "SHRED"
     LA(LC(LS(Z))): "TAG Z"
@@ -236,11 +255,8 @@ parse_config:
     LA(KP_N1): "REJECT"
     LA(KP_N2): "PENDING"
     LA(KP_N3): "ACCEPT"
-    F12: "DEV TOOLS"
-    BRIGHTNESS INC: "BRIGHT ▲"
-    C_BRIGHTNESS_INC: "BRIGHT ▲"
-    BRIGHTNESS DEC: "BRIGHT ▼"
-    C_BRIGHTNESS_DEC: "BRIGHT ▼"
+    C_BRI_UP: "BRIGHT ▲"
+    C_BRI_DN: "BRIGHT ▼"
     KP_MINUS: "-"
     KP_SLASH: "/"
   zmk_combos: {}

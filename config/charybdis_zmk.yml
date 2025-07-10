@@ -7,7 +7,7 @@ requires: [pro_micro]
 features:
   - Keys
   - QWERTY
-  - Colemak DH
+  - Canary
   - Mouse keys pointer
   - Trackball pointer
   - Dongle/Bluetooth/USB
