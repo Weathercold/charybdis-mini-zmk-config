@@ -1,5 +1,1 @@
-/ {
-    combos {
-        compatible = "zmk,combos";
-    };
-};
+../combos.dtsi

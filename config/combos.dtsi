@@ -1,0 +1,5 @@
+/ {
+    combos {
+        compatible = "zmk,combos";
+    };
+};
