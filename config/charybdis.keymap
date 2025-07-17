@@ -24,12 +24,12 @@
     // #define CANARY 0
     // #define QWERTY 1
     // #define GAME   2
-    // #define FUN    3
-    // #define NAV    4
-    // #define EXT    5
-    // #define SYM    6
-    // #define NUM    7
-    // #define PTR    8
+    // #define PTR    3
+    // #define EXT    4
+    // #define NAV    5
+    // #define FUN    6
+    // #define SYM    7
+    // #define NUM    8
     // #define SCROLL 9
     // #define SLOW   10
 
@@ -71,7 +71,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp C_AC_REDO  &kp C_AC_PASTE  &kp C_AC_COPY  &kp C_AC_CUT  &kp C_AC_UNDO  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans         &mkp LCLK       &mkp MCLK      &mkp RCLK     &mo 10         &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans         &mkp MB4        &mo 10         &mkp MB5      &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans         &mkp MB4        &mo 9          &mkp MB5      &trans         &trans
                         &trans  &trans  &trans    &trans         &trans
             >;
         };
