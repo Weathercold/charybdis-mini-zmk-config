@@ -45,35 +45,20 @@
             hold-trigger-on-release;
         };
 
-        td_n1_n2: td_n1_n2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp N1>, <&kp N2>;
-
-            tapping-term-ms = <125>;
-        };
-
-        td_n3_n4: td_n3_n4 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <125>;
-            bindings = <&kp N3>, <&kp N4>;
-        };
-
-        td_base_layer: td_base_layer {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&to 0>, <&to 1>, <&to 2>;
-        };
-
-        lt_td_base_layer: lt_td_base_layer {
+        lt_tl: lt_tl {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&mo>, <&td_base_layer>;
+            bindings = <&mo>, <&tl>;
 
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <150>;
+        };
+
+        tl: tl {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            toggle-mode = "flip";
         };
     };
 };
+
