@@ -13,6 +13,7 @@
             &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
             // &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
         >;
+        process-next;
     };
 
     /* layer-10 slow-pointer override */
