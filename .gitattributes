@@ -1,4 +1,4 @@
-keymap-drawer/base/charybdis.svg linguist-generated
-keymap-drawer/base/charybdis.yaml linguist-generated
+*.keymap linguist-language=C
+*.dtsi linguist-language=C
 keymap-drawer/charybdis.svg linguist-generated
 keymap-drawer/charybdis.yaml linguist-generated
