@@ -20,7 +20,7 @@ draw_config:
   small_pad: 2.0
   legend_rel_x: 0.0
   legend_rel_y: 0.0
-  draw_key_sides: false
+  draw_key_sides: true
   key_side_pars:
     rel_x: 0.0
     rel_y: 4.0
@@ -50,7 +50,7 @@ parse_config:
   preprocess: true
   skip_binding_parsing: false
   raw_binding_map:
-    "&bootloader": "BOOTLDR"
+    "&bootloader": "bootldr"
     "&mkp RCLK": "RCLK"
     "&mkp LCLK": "LCLK"
     "&mkp MCLK": "MCLK"
@@ -64,8 +64,15 @@ parse_config:
     "&msc MOVE_DOWN": "WHEEL U"
     "&msc MOVE_LEFT": "WHEEL L"
     "&msc MOVE_RIGHT": "WHEEL R"
-    "&caps_word": "CAPS WORD"
-    "&studio_unlock": "STUDIO UNLOCK"
+    "&caps_word": "caps word"
+    "&studio_unlock": "studio unlock"
+    "&bt BT_CLR": "bt clear"
+    "&bt BT_SEL 0": "bt sel 0"
+    "&bt BT_SEL 1": "bt sel 1"
+    "&bt BT_SEL 2": "bt sel 2"
+    "&bt BT_SEL 3": "bt sel 3"
+    "&out OUT_TOG": "out tog"
+    "&ext_power EP_TOG": "ep tog"
   sticky_label: sticky
   toggle_label: toggle
   tap_toggle_label: tap-toggle
@@ -224,39 +231,25 @@ parse_config:
     NON_US_HASH: "#"
     NUHS: "#"
     TILDE2: "~"
-    LA(LC(T)): "SHELL"
-    C_AC_SEARCH: "SEARCH"
-    LG(E): "WINDOW"
     LC(LA(LSHFT)): "LMEH"
     LG(LC(LA(LSHFT))): "LHYPR"
     RG(RC(RA(RSHFT))): "RHYPR"
-    LC(F10): "ALL WIN"
-    LS(LC(H)): "PANE ◀"
-    LS(LC(J)): "PANE ▲"
-    LS(LC(K)): "PANE ▼"
-    LS(LC(L)): "PANE ▶"
-    LEFT_ARROW: "LEFT"
-    RIGHT_ARROW: "RIGHT"
+    LEFT: "←"
+    DOWN: "↓"
+    UP: "↑"
+    RIGHT: "→"
     C_AC_UNDO: "UNDO"
+    C_AC_REDO: "REDO"
     C_AC_CUT: "CUT"
     C_AC_COPY: "COPY"
     C_AC_PASTE: "PASTE"
+    C_AC_DESKTOP_SHOW_ALL_WINDOWS: "OVERVIEW"
+    C_AC_SEARCH: "SEARCH"
     C_AL_COFFEE: "LOCK"
-    PSCRN: "PRINTSCREEN"
-    BACKSPACE: "BACKSPACE"
-    LC(LA(E)): "FIT"
-    LS(DELETE): "SHRED"
-    LA(LC(LS(Z))): "TAG Z"
-    LA(LC(LS(E))): "TAG E"
-    LA(LC(LS(A))): "TAG A"
-    LA(LC(LS(S))): "TAG S"
-    LA(LC(LS(B))): "TAG B"
-    LA(LS(A)): "SHOW TAGS"
-    LA(KP_N1): "REJECT"
-    LA(KP_N2): "PENDING"
-    LA(KP_N3): "ACCEPT"
-    C_BRI_UP: "BRIGHT ▲"
-    C_BRI_DN: "BRIGHT ▼"
+    C_VOL_UP: "VOL▲"
+    C_VOL_DN: "VOL▼"
+    C_BRI_UP: "BRI▲"
+    C_BRI_DN: "BRI▼"
     KP_MINUS: "-"
     KP_SLASH: "/"
   zmk_combos: {}

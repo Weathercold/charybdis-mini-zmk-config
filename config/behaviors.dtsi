@@ -45,19 +45,13 @@
             hold-trigger-on-release;
         };
 
-        lt_tl: lt_tl {
+        lt_tog: lt_tog {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&mo>, <&tl>;
+            bindings = <&mo>, <&tog>;
 
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
-        };
-
-        tl: tl {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            toggle-mode = "flip";
         };
     };
 };
