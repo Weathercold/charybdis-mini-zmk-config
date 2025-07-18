@@ -10,6 +10,18 @@
 #include "behaviors.dtsi"
 #include "combos.dtsi"
 
+#define CANARY 0
+#define QWERTY 1
+#define GAME   2
+#define PTR    3
+#define EXT    4
+#define NAV    5
+#define FUN    6
+#define SYM    7
+#define NUM    8
+#define SCROLL 9
+#define SLOW   10
+
 / {
     /* --- KEYMAP CONFIG --- */
     // ╭──────┬──────┬──────┬──────┬──────┬──────╮  ╭──────┬──────┬──────┬──────┬──────┬──────╮
@@ -21,17 +33,6 @@
     // ╰──────┴──────┴──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┴──────┴──────┴──────╯
     //                         36     37     38        39     40
     //                      ╰──────┴──────┴──────╯  ╰──────┴──────╯
-    // #define CANARY 0
-    // #define QWERTY 1
-    // #define GAME   2
-    // #define PTR    3
-    // #define EXT    4
-    // #define NAV    5
-    // #define FUN    6
-    // #define SYM    7
-    // #define NUM    8
-    // #define SCROLL 9
-    // #define SLOW   10
 
     keymap {
         compatible = "zmk,keymap";
@@ -39,10 +40,10 @@
         CANARY {
             label = "Canary";
             bindings = <
-&kp ESC                            &kp W            &kp L             &kp Y            &kp P             &kp B         &kp Z      &kp F              &kp O             &kp U              &kp SQT           &kp MINUS
-&mt_caps_word LA(LC(LG(LSHFT))) 0  &mt_left LGUI C  &mt_left LCTRL R  &mt_left LALT S  &mt_left LSHFT T  &kp G         &kp M      &mt_right RSHFT N  &mt_right RALT E  &mt_right RCTRL I  &mt_right RGUI A  &mt_right RA(RC(RG(RSHFT))) SEMI
-&kp BSLH                           &kp Q            &kp J             &kp V            &kp D             &kp K         &kp X      &kp H              &kp FSLH          &kp COMMA          &kp DOT           &lt_tl 3 3
-                                                                      &lt 4 TAB        &lt 5 SPACE       &lt 6 BSPC    &lt 7 DEL  &lt 8 ENTER
+&kp ESC                            &kp W            &kp L             &kp Y            &kp P             &kp B         &kp Z        &kp F              &kp O             &kp U              &kp SQT           &kp MINUS
+&mt_caps_word LA(LC(LG(LSHFT))) 0  &mt_left LGUI C  &mt_left LCTRL R  &mt_left LALT S  &mt_left LSHFT T  &kp G         &kp M        &mt_right RSHFT N  &mt_right RALT E  &mt_right RCTRL I  &mt_right RGUI A  &mt_right RA(RC(RG(RSHFT))) SEMI
+&kp BSLH                           &kp Q            &kp J             &kp V            &kp D             &kp K         &kp X        &kp H              &kp FSLH          &kp COMMA          &kp DOT           &lt_tl PTR PTR
+                                                                      &lt EXT TAB      &lt NAV SPACE     &lt FUN BSPC  &lt SYM DEL  &lt NUM ENTER
             >;
         };
 
@@ -70,8 +71,8 @@
             label = "Pointer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp C_AC_REDO  &kp C_AC_PASTE  &kp C_AC_COPY  &kp C_AC_CUT  &kp C_AC_UNDO  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans         &mkp LCLK       &mkp MCLK      &mkp RCLK     &mo 10         &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans         &mkp MB4        &mo 9          &mkp MB5      &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans         &mkp LCLK       &mkp MCLK      &mkp RCLK     &mo SLOW       &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans         &mkp MB4        &mo SCROLL     &mkp MB5      &trans         &trans
                         &trans  &trans  &trans    &trans         &trans
             >;
         };
