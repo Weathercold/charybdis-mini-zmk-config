@@ -1,10 +1,6 @@
 name: Build and Release ZMK Firmware
 on:
   push:
-    branches:
-      - main
-    tags:
-      - 'v1.0.1'
   workflow_dispatch:
 
 jobs:
@@ -232,8 +228,8 @@ jobs:
 #  IMAGES - generate keymap images
 # ──────────────────────────────────────────────────────────────
 
-  keymap_images:
-    needs: [build]
-    permissions:
-      contents: write
-    uses: ./.github/workflows/draw_keymaps.yaml
+  # keymap_images:
+  #   needs: [build]
+  #   permissions:
+  #     contents: write
+  #   uses: ./.github/workflows/draw_keymaps.yaml

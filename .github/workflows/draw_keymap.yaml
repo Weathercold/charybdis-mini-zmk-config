@@ -1,0 +1,55 @@
+name: Draw keymap
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  draw_keymap:
+    name: Draw keymap
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write
+    with:
+      config_path:     "keymap-drawer/config.yaml"
+      parse_args:      "-c 12"
+      draw_args:       ""
+      amend_commit:    false
+      destination:     artifact
+      artifact_name:   keymap
+      fail_on_error:   true
+      debug_mode:      false
+
+  publish_keymap:
+    name: Publish keymap
+    needs: [draw_keymap]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          clean: false
+
+      - name: Download keymap artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: keymap
+          path: keymap-drawer
+
+      - name: List downloaded files
+        run: |
+          echo "Downloaded contents:"
+          ls -lR keymap-drawer
+          echo "--- git status ---"
+          git status
+
+      - name: Auto-commit keymap drawing
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: draw keymap"
+          commit_author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          file_pattern: keymap-drawer
