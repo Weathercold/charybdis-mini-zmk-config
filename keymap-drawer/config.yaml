@@ -8,7 +8,7 @@ draw_config:
   key_ry: 6.0
   dark_mode: auto
   n_columns: 1
-  separate_combo_diagrams: true
+  separate_combo_diagrams: false
   combo_diagrams_scale: 2
   inner_pad_w: 2.0
   inner_pad_h: 2.0
@@ -238,18 +238,30 @@ parse_config:
     DOWN: "↓"
     UP: "↑"
     RIGHT: "→"
-    C_AC_UNDO: "UNDO"
-    C_AC_REDO: "REDO"
+    PG_UP: "PG▲"
+    PG_DN: "PG▼"
+    SPACE: "␣"
+    TAB: "⇥"
+    RET: "⏎"
+    BSPC: "⌫"
+    DEL: "⌦"
+    K_APP: "☰"
+    C_AC_UNDO: "↶"
+    C_AC_REDO: "↷"
     C_AC_CUT: "CUT"
     C_AC_COPY: "COPY"
     C_AC_PASTE: "PASTE"
     C_AC_DESKTOP_SHOW_ALL_WINDOWS: "OVERVIEW"
-    C_AC_SEARCH: "SEARCH"
+    C_AC_SEARCH: "⌕"
     C_AL_COFFEE: "LOCK"
     C_VOL_UP: "VOL▲"
     C_VOL_DN: "VOL▼"
     C_BRI_UP: "BRI▲"
     C_BRI_DN: "BRI▼"
+    C_PLAY_PAUSE: "⏯"
+    C_STOP: "⏹"
+    C_PREV: "⏮"
+    C_NEXT: "⏭"
     KP_MINUS: "-"
     KP_SLASH: "/"
   zmk_combos: {}
