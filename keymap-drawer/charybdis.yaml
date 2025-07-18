@@ -37,11 +37,11 @@ layers:
   - ','
   - .
   - {t: Pointer, h: Pointer}
-  - {t: TAB, h: Extension}
-  - {t: SPACE, h: Navigation}
-  - {t: BSPC, h: Function}
-  - {t: DEL, h: Symbolic}
-  - {t: ENTER, h: Numeric}
+  - {t: ⇥, h: Extension}
+  - {t: ␣, h: Navigation}
+  - {t: ⌫, h: Function}
+  - {t: ⌦, h: Symbolic}
+  - {t: ⏎, h: Numeric}
   Qwerty:
   - {t: ▽, type: trans}
   - Q
@@ -122,7 +122,7 @@ layers:
   - .
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - SPACE
+  - ␣
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -133,11 +133,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - REDO
+  - ↷
   - PASTE
   - COPY
   - CUT
-  - UNDO
+  - ↶
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -176,7 +176,7 @@ layers:
   - {t: Game, h: toggle}
   - ''
   - OVERVIEW
-  - APP
+  - ☰
   - PSCRN
   - SNAPSHOT
   - REC
@@ -190,8 +190,8 @@ layers:
   - MUTE
   - VOL▼
   - VOL▲
-  - PREV
-  - NEXT
+  - ⏮
+  - ⏭
   - ''
   - bt clear
   - bt sel 0
@@ -202,14 +202,14 @@ layers:
   - BKLT TOG
   - BRI▼
   - BRI▲
-  - PLAY PAUSE
-  - STOP
+  - ⏯
+  - ⏹
   - ''
   - {type: held}
   - ''
   - ''
-  - DEL
-  - ENTER
+  - ⌦
+  - ⏎
   Navigation:
   - {t: ▽, type: trans}
   - ''
@@ -217,11 +217,11 @@ layers:
   - ''
   - ''
   - ''
-  - REDO
+  - ↷
   - PASTE
   - COPY
   - CUT
-  - UNDO
+  - ↶
   - ''
   - LHYPR
   - LGUI
@@ -243,15 +243,15 @@ layers:
   - ''
   - ''
   - HOME
-  - PG DN
-  - PG UP
+  - PG▼
+  - PG▲
   - END
   - ''
   - ''
   - {type: held}
   - ''
-  - DEL
-  - ENTER
+  - ⌦
+  - ⏎
   Function:
   - ''
   - ''
@@ -272,7 +272,7 @@ layers:
   - LSHFT
   - ''
   - INS
-  - F4
+  - F4 RET
   - F5
   - F6
   - F11
@@ -292,8 +292,8 @@ layers:
   - ''
   - ''
   - {type: held}
-  - DEL
-  - ENTER
+  - ⌦
+  - ⏎
   Symbolic:
   - ''
   - (
@@ -331,9 +331,9 @@ layers:
   - ''
   - ''
   - ''
-  - TAB
-  - SPACE
-  - BSPC
+  - ⇥
+  - ␣
+  - ⌫
   - {type: held}
   - ''
   Numeric:
@@ -374,8 +374,8 @@ layers:
   - ''
   - ''
   - '0'
-  - SPACE
-  - BSPC
+  - ␣
+  - ⌫
   - ''
   - {type: held}
   Scroll:
