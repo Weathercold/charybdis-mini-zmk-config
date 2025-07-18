@@ -38,7 +38,7 @@
         compatible = "zmk,keymap";
 
         CANARY {
-            label = "Canary";
+            display-name = "Canary";
             bindings = <
 &kp ESC                            &kp W            &kp L             &kp Y            &kp P             &kp B         &kp Z        &kp F              &kp O             &kp U              &kp SQT           &kp MINUS
 &mt_caps_word LA(LC(LG(LSHFT))) 0  &mt_left LGUI C  &mt_left LCTRL R  &mt_left LALT S  &mt_left LSHFT T  &kp G         &kp M        &mt_right RSHFT N  &mt_right RALT E  &mt_right RCTRL I  &mt_right RGUI A  &mt_right RA(RC(RG(RSHFT))) SEMI
@@ -48,7 +48,7 @@
         };
 
         QWERTY {
-            label = "Qwerty";
+            display-name = "Qwerty";
             bindings = <
 &trans  &kp Q            &kp W             &kp E            &kp R             &kp T     &kp Y   &kp U              &kp I             &kp O              &kp P                &trans
 &trans  &mt_left LGUI A  &mt_left LCTRL S  &mt_left LALT D  &mt_left LSHFT F  &kp G     &kp H   &mt_right RSHFT J  &mt_right RALT K  &mt_right RCTRL L  &mt_right RGUI SEMI  &mt_right RA(RC(RG(RSHFT))) SQT
@@ -58,7 +58,7 @@
         };
 
         GAME {
-            label = "Game";
+            display-name = "Game";
             bindings = <
 &trans     &kp N1  &kp Q  &kp W   &kp E      &kp R     &kp T   &kp Y     &kp UP    &kp I      &kp O    &kp P
 &kp LSHFT  &kp N2  &kp A  &kp S   &kp D      &kp F     &kp G   &kp LEFT  &kp DOWN  &kp RIGHT  &kp L    &kp SEMI
@@ -68,7 +68,7 @@
         };
 
         PTR {
-            label = "Pointer";
+            display-name = "Pointer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp C_AC_REDO  &kp C_AC_PASTE  &kp C_AC_COPY  &kp C_AC_CUT  &kp C_AC_UNDO  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans         &mkp LCLK       &mkp MCLK      &mkp RCLK     &mo SLOW       &trans
@@ -78,7 +78,7 @@
         };
 
         EXT {
-            label = "Extension";
+            display-name = "Extension";
             bindings = <
 &studio_unlock         &none         &to 0         &to 1         &to 2         &none                &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp K_APP     &kp PSCRN     &kp C_SNAPSHOT    &kp C_REC   &none
 &kp LA(LC(LG(LSHFT)))  &kp LGUI      &kp LCTRL     &kp LALT      &kp LSHFT     &ext_power EP_TOG    &kp C_MUTE                         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PREV        &kp C_NEXT  &none
@@ -88,7 +88,7 @@
         };
 
         NAV {
-            label = "Navigation";
+            display-name = "Navigation";
             bindings = <
 &trans                 &none     &none      &none     &none      &none    &kp C_AC_REDO  &kp C_AC_PASTE  &kp C_AC_COPY  &kp C_AC_CUT  &kp C_AC_UNDO  &none
 &kp LA(LC(LG(LSHFT)))  &kp LGUI  &kp LCTRL  &kp LALT  &kp LSHFT  &none    &none          &kp LEFT        &kp DOWN       &kp UP        &kp RIGHT      &none
@@ -98,7 +98,7 @@
         };
 
         FUN {
-            label = "Function";
+            display-name = "Function";
             bindings = <
 &none                  &none     &none      &none     &none      &none    &kp PAUSE_BREAK  &kp F7     &kp F8  &kp F9  &kp F12  &kp SYSREQ
 &kp LA(LC(LG(LSHFT)))  &kp LGUI  &kp LCTRL  &kp LALT  &kp LSHFT  &none    &kp INS          &kp F4     &kp F5  &kp F6  &kp F11  &kp CAPS
@@ -108,7 +108,7 @@
         };
 
         SYM {
-            label = "Symbolic";
+            display-name = "Symbolic";
             bindings = <
 &none  &kp LPAR  &kp AMPS  &kp GRAVE  &kp TILDE  &kp RPAR    &none  &none      &none     &none      &none     &none
 &none  &kp LBKT  &kp DLLR  &kp PRCNT  &kp CARET  &kp RBKT    &none  &kp RSHFT  &kp RALT  &kp RCTRL  &kp RGUI  &kp RA(RC(RG(RSHFT)))
@@ -118,7 +118,7 @@
         };
 
         NUM {
-            label = "Numeric";
+            display-name = "Numeric";
             bindings = <
 &none  &kp MINUS  &kp N7  &kp N8  &kp N9     &kp PLUS     &none  &none      &none     &none      &none     &none
 &none  &kp FSLH   &kp N4  &kp N5  &kp N6     &kp STAR     &none  &kp RSHFT  &kp RALT  &kp RCTRL  &kp RGUI  &kp RA(RC(RG(RSHFT)))
@@ -128,7 +128,7 @@
         };
 
         SCROLL {
-            label = "Scroll";
+            display-name = "Scroll";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
@@ -138,7 +138,7 @@
         };
 
         SLOW {
-            label = "Slow";
+            display-name = "Slow";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
