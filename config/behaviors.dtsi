@@ -32,26 +32,30 @@
             hold-trigger-on-release;
         };
 
-        mt_caps_word: mt_caps_word {
+        lt_trans: lt_trans {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&kp>, <&caps_word>;
+            bindings = <&mo>, <&trans>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
             flavor = "balanced";
             require-prior-idle-ms = <150>;
             quick-tap-ms = <175>;
-            hold-trigger-key-positions = <KEYS_R>;
-            hold-trigger-on-release;
+            hold-while-undecided;
         };
 
-        lt_tog: lt_tog {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&mo>, <&tog>;
-
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
+        td_n1_n2: td_n1_n2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <150>;
+            bindings = <&kp N1>, <&kp N2>;
+        };
+
+        td_n3_n4: td_n3_n4 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp N3>, <&kp N4>;
         };
     };
 };

@@ -14,14 +14,17 @@
 #define CANARY 0
 #define QWERTY 1
 #define GAME   2
-#define PTR    3
-#define EXT    4
-#define NAV    5
-#define FUN    6
-#define SYM    7
-#define NUM    8
+#define EXT    3
+#define NAV    4
+#define FUN    5
+#define SYM    6
+#define NUM    7
+#define PTR    8
 #define SCROLL 9
 #define SLOW   10
+
+#define LHYPR LG(LC(LA(LSHFT)))
+#define RHYPR RG(RC(RA(RSHFT)))
 
 / {
     /* --- KEYMAP CONFIG --- */
@@ -41,10 +44,10 @@
         CANARY {
             display-name = "Canary";
             bindings = <
-&kp ESC                            &kp W            &kp L             &kp Y            &kp P             &kp B         &kp Z        &kp F              &kp O             &kp U              &kp SQT           &kp MINUS
-&mt_caps_word LG(LC(LA(LSHFT))) 0  &mt_left LGUI C  &mt_left LCTRL R  &mt_left LALT S  &mt_left LSHFT T  &kp G         &kp M        &mt_right RSHFT N  &mt_right RALT E  &mt_right RCTRL I  &mt_right RGUI A  &mt_right RG(RC(RA(RSHFT))) SEMI
-&kp BSLH                           &kp Q            &kp J             &kp V            &kp D             &kp K         &kp X        &kp H              &kp FSLH          &kp COMMA          &kp DOT           &lt_tog PTR PTR
-                                                                      &lt EXT TAB      &lt NAV SPACE     &lt FUN BSPC  &lt SYM DEL  &lt NUM RET
+&tog 8              &kp W            &kp L             &kp Y            &kp P             &kp B         &kp Z        &kp F              &kp O             &kp U              &kp SQT           &kp MINUS
+&mt_left LHYPR ESC  &mt_left LGUI C  &mt_left LCTRL R  &mt_left LALT S  &mt_left LSHFT T  &kp G         &kp M        &mt_right RSHFT N  &mt_right RALT E  &mt_right RCTRL I  &mt_right RGUI A  &mt_right RHYPR SEMI
+&caps_word          &kp Q            &kp J             &kp V            &kp D             &kp K         &kp X        &kp H              &kp FSLH          &kp COMMA          &kp DOT           &kp BSLH
+                                                       &lt EXT TAB      &lt NAV SPACE     &lt FUN BSPC  &lt SYM DEL  &lt NUM RET
             >;
         };
 
@@ -52,7 +55,7 @@
             display-name = "Qwerty";
             bindings = <
 &trans  &kp Q            &kp W             &kp E            &kp R             &kp T     &kp Y   &kp U              &kp I             &kp O              &kp P                &trans
-&trans  &mt_left LGUI A  &mt_left LCTRL S  &mt_left LALT D  &mt_left LSHFT F  &kp G     &kp H   &mt_right RSHFT J  &mt_right RALT K  &mt_right RCTRL L  &mt_right RGUI SEMI  &mt_right RG(RC(RA(RSHFT))) SQT
+&trans  &mt_left LGUI A  &mt_left LCTRL S  &mt_left LALT D  &mt_left LSHFT F  &kp G     &kp H   &mt_right RSHFT J  &mt_right RALT K  &mt_right RCTRL L  &mt_right RGUI SEMI  &mt_right RHYPR SQT
 &trans  &kp Z            &kp X             &kp C            &kp V             &kp B     &kp N   &kp M              &kp COMMA         &kp DOT            &kp FSLH             &trans
                                            &trans           &trans            &trans    &trans  &trans
             >;
@@ -61,50 +64,40 @@
         GAME {
             display-name = "Game";
             bindings = <
-&trans     &kp N1  &kp Q  &kp W   &kp E      &kp R     &kp T   &kp Y     &kp UP    &kp I      &kp O    &kp P
-&kp LSHFT  &kp N2  &kp A  &kp S   &kp D      &kp F     &kp G   &kp LEFT  &kp DOWN  &kp RIGHT  &kp L    &kp SEMI
-&kp LCTRL  &kp N3  &kp Z  &kp X   &kp C      &kp V     &kp B   &kp N     &kp M     &kp COMMA  &kp DOT  &trans
-                          &trans  &kp SPACE  &trans    &trans  &trans
-            >;
-        };
-
-        PTR {
-            display-name = "Pointer";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp C_AC_REDO  &kp C_AC_PASTE  &kp C_AC_COPY  &kp C_AC_CUT  &kp C_AC_UNDO  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans         &mkp LCLK       &mkp MCLK      &mkp RCLK     &mo SLOW       &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans         &mkp MB4        &mo SCROLL     &mkp MB5      &trans         &trans
-                        &trans  &trans  &trans    &trans         &trans
+&trans     &td_n1_n2  &kp Q  &kp W   &kp E      &kp R     &kp T   &kp Y     &kp UP    &kp I      &kp O    &kp P
+&kp ESC    &td_n3_n4  &kp A  &kp S   &kp D      &kp F     &kp G   &kp LEFT  &kp DOWN  &kp RIGHT  &kp L    &kp SEMI
+&kp LCTRL  &kp LSHFT  &kp Z  &kp X   &kp C      &kp V     &kp B   &kp N     &kp M     &kp COMMA  &kp DOT  &kp FSLH
+                             &trans  &kp SPACE  &trans    &trans  &trans
             >;
         };
 
         EXT {
             display-name = "Extension";
             bindings = <
-&studio_unlock         &none         &to 0         &to 1         &to 2         &none                &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp K_APP     &kp PSCRN     &kp C_SNAPSHOT    &kp C_REC   &none
-&kp LG(LC(LA(LSHFT)))  &kp LGUI      &kp LCTRL     &kp LALT      &kp LSHFT     &ext_power EP_TOG    &kp C_MUTE                         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PREV        &kp C_NEXT  &none
-&bt BT_CLR             &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_TOG         &kp C_BKLT_TOG                     &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PLAY_PAUSE  &kp C_STOP  &none
-                                                   &none         &none         &none                &kp DEL                            &kp RET
+&studio_unlock  &none         &to CANARY    &to QWERTY    &to GAME      &none                &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp K_APP     &kp PSCRN     &kp C_SNAPSHOT    &kp C_REC   &none
+&kp LHYPR       &kp LGUI      &kp LCTRL     &kp LALT      &kp LSHFT     &ext_power EP_TOG    &kp C_MUTE                         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PREV        &kp C_NEXT  &none
+&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_TOG         &kp C_BKLT_TOG                     &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PLAY_PAUSE  &kp C_STOP  &none
+                                            &none         &none         &none                &kp DEL                            &kp RET
             >;
         };
 
         NAV {
             display-name = "Navigation";
             bindings = <
-&trans                 &none     &none      &none     &none      &none    &kp C_AC_REDO  &kp C_AC_PASTE  &kp C_AC_COPY  &kp C_AC_CUT  &kp C_AC_UNDO  &none
-&kp LG(LC(LA(LSHFT)))  &kp LGUI  &kp LCTRL  &kp LALT  &kp LSHFT  &none    &none          &kp LEFT        &kp DOWN       &kp UP        &kp RIGHT      &none
-&none                  &none     &none      &none     &none      &none    &none          &kp HOME        &kp PG_DN      &kp PG_UP     &kp END        &none
-                                            &none     &none      &none    &kp DEL        &kp RET
+&none               &none     &none      &none     &none      &none    &kp C_AC_REDO  &kp C_AC_PASTE  &kp C_AC_COPY  &kp C_AC_CUT  &kp C_AC_UNDO  &none
+&mt_left LHYPR ESC  &kp LGUI  &kp LCTRL  &kp LALT  &kp LSHFT  &none    &none          &kp LEFT        &kp DOWN       &kp UP        &kp RIGHT      &none
+&none               &none     &none      &none     &none      &none    &none          &kp HOME        &kp PG_DN      &kp PG_UP     &kp END        &none
+                                         &none     &none      &none    &kp DEL        &kp RET
             >;
         };
 
         FUN {
             display-name = "Function";
             bindings = <
-&none                  &none     &none      &none     &none      &none    &kp PAUSE_BREAK  &kp F7   &kp F8  &kp F9  &kp F12  &kp SYSREQ
-&kp LG(LC(LA(LSHFT)))  &kp LGUI  &kp LCTRL  &kp LALT  &kp LSHFT  &none    &kp INS          &kp F4   &kp F5  &kp F6  &kp F11  &kp CAPS
-&none                  &none     &none      &none     &none      &none    &kp CLEAR        &kp F1   &kp F2  &kp F3  &kp F10  &kp SLCK
-                                            &none     &none      &none    &kp DEL          &kp RET
+&none      &none     &none      &none     &none      &none    &kp PAUSE_BREAK  &kp F7     &kp F8  &kp F9  &kp F12  &kp SYSREQ
+&kp LHYPR  &kp LGUI  &kp LCTRL  &kp LALT  &kp LSHFT  &none    &kp INS          &kp F4     &kp F5  &kp F6  &kp F11  &kp CAPS
+&none      &none     &none      &none     &none      &none    &kp CLEAR        &kp F1     &kp F2  &kp F3  &kp F10  &kp SLCK
+                                &none     &none      &none    &kp DEL          &kp RET
             >;
         };
 
@@ -112,7 +105,7 @@
             display-name = "Symbolic";
             bindings = <
 &none  &kp LPAR  &kp AMPS  &kp GRAVE  &kp TILDE  &kp RPAR    &none  &none      &none     &none      &none     &none
-&none  &kp LBKT  &kp DLLR  &kp PRCNT  &kp CARET  &kp RBKT    &none  &kp RSHFT  &kp RALT  &kp RCTRL  &kp RGUI  &kp RG(RC(RA(RSHFT)))
+&none  &kp LBKT  &kp DLLR  &kp PRCNT  &kp CARET  &kp RBKT    &none  &kp RSHFT  &kp RALT  &kp RCTRL  &kp RGUI  &kp RHYPR
 &none  &kp LBRC  &kp EXCL  &kp AT     &kp HASH   &kp RBRC    &none  &none      &none     &none      &none     &none
                            &kp TAB    &kp SPACE  &kp BSPC    &none  &none
             >;
@@ -122,9 +115,19 @@
             display-name = "Numeric";
             bindings = <
 &none  &kp MINUS  &kp N7  &kp N8  &kp N9     &kp PLUS     &none  &none      &none     &none      &none     &none
-&none  &kp FSLH   &kp N4  &kp N5  &kp N6     &kp STAR     &none  &kp RSHFT  &kp RALT  &kp RCTRL  &kp RGUI  &kp RG(RC(RA(RSHFT)))
+&none  &kp FSLH   &kp N4  &kp N5  &kp N6     &kp STAR     &none  &kp RSHFT  &kp RALT  &kp RCTRL  &kp RGUI  &kp RHYPR
 &none  &kp DOT    &kp N1  &kp N2  &kp N3     &kp EQUAL    &none  &none      &none     &none      &none     &none
                           &kp N0  &kp SPACE  &kp BSPC     &none  &none
+            >;
+        };
+
+        PTR {
+            display-name = "Pointer";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &lt_trans SLOW 0  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans            &trans
+                        &trans  &trans  &trans    &trans  &trans
             >;
         };
 
