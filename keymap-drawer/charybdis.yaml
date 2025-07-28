@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: charybdis}
 layers:
   Canary:
-  - ESC
+  - {t: Pointer, h: toggle}
   - W
   - L
   - Y
@@ -13,7 +13,7 @@ layers:
   - U
   - ''''
   - '-'
-  - {t: caps word, h: LHYPR}
+  - {t: ESC, h: LHYPR}
   - {t: C, h: LGUI}
   - {t: R, h: LCTRL}
   - {t: S, h: LALT}
@@ -25,7 +25,7 @@ layers:
   - {t: I, h: RCTRL}
   - {t: A, h: RGUI}
   - {t: ;, h: RHYPR}
-  - \
+  - caps word
   - Q
   - J
   - V
@@ -36,7 +36,7 @@ layers:
   - /
   - ','
   - .
-  - {t: Pointer, h: Pointer}
+  - \
   - {t: ⇥, h: Extension}
   - {t: ␣, h: Navigation}
   - {t: ⌫, h: Function}
@@ -86,7 +86,7 @@ layers:
   - {t: ▽, type: trans}
   Game:
   - {t: ▽, type: trans}
-  - '1'
+  - '&td_n1_n2'
   - Q
   - W
   - E
@@ -97,8 +97,8 @@ layers:
   - I
   - O
   - P
-  - LSHFT
-  - '2'
+  - ESC
+  - '&td_n3_n4'
   - A
   - S
   - D
@@ -110,7 +110,7 @@ layers:
   - L
   - ;
   - LCTRL
-  - '3'
+  - LSHFT
   - Z
   - X
   - C
@@ -120,51 +120,9 @@ layers:
   - M
   - ','
   - .
-  - {t: ▽, type: trans}
+  - /
   - {t: ▽, type: trans}
   - ␣
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  Pointer:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ↷
-  - PASTE
-  - COPY
-  - CUT
-  - ↶
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LCLK
-  - MCLK
-  - RCLK
-  - Slow
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - MB4
-  - Scroll
-  - MB5
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -211,7 +169,7 @@ layers:
   - ⌦
   - ⏎
   Navigation:
-  - {t: ▽, type: trans}
+  - ''
   - ''
   - ''
   - ''
@@ -223,7 +181,7 @@ layers:
   - CUT
   - ↶
   - ''
-  - LHYPR
+  - {t: ESC, h: LHYPR}
   - LGUI
   - LCTRL
   - LALT
@@ -378,6 +336,48 @@ layers:
   - ⌫
   - ''
   - {type: held}
+  Pointer:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: '&trans', h: Slow}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   Scroll:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -398,23 +398,23 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -456,9 +456,28 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+combos:
+- p: [19, 20]
+  k: LCLK
+  l: [Pointer]
+- p: [20, 21]
+  k: RCLK
+  l: [Pointer]
+- p: [19, 20, 21]
+  k: MCLK
+  l: [Pointer]
+- p: [19, 21]
+  k: Scroll
+  l: [Pointer]
+- p: [31, 32]
+  k: MB4
+  l: [Pointer]
+- p: [32, 33]
+  k: MB5
+  l: [Pointer]
