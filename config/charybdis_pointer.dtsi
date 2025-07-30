@@ -3,23 +3,22 @@
 
 &trackball_listener {
     /* base processor chain on all layers */
-    input-processors = <&zip_xy_scaler 3 4 &zip_temp_layer 8 2000>;
+    input-processors = <&zip_xy_scaler 3 4>;
 
-    /* layer-9 scroll override */
+    /* layer-8 scroll override */
     scroller: scroller {
         layers           = <9>;
         input-processors = <
             &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
             &zip_scroll_scaler 1 15                          // Scales the scroll speed
             // &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
-            &zip_temp_layer 8 2000
         >;
         process-next;
     };
 
-    /* layer-10 slow-pointer override */
+    /* layer-9 slow-pointer override */
     slow_pointer: slow_pointer {
         layers           = <10>;
-        input-processors = <&zip_xy_scaler 2 6 &zip_temp_layer 8 2000>;
+        input-processors = <&zip_xy_scaler 2 6>;
     };
 };

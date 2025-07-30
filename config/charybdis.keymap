@@ -19,9 +19,8 @@
 #define FUN    5
 #define SYM    6
 #define NUM    7
-#define PTR    8
-#define SCROLL 9
-#define SLOW   10
+#define SCROLL 8
+#define SLOW   9
 
 #define LHYPR LG(LC(LA(LSHFT)))
 #define RHYPR RG(RC(RA(RSHFT)))
@@ -44,9 +43,9 @@
         CANARY {
             display-name = "Canary";
             bindings = <
-&tog 8              &kp W            &kp L             &kp Y            &kp P             &kp B         &kp Z        &kp F              &kp O             &kp U              &kp SQT           &kp MINUS
-&mt_left LHYPR ESC  &mt_left LGUI C  &mt_left LCTRL R  &mt_left LALT S  &mt_left LSHFT T  &kp G         &kp M        &mt_right RSHFT N  &mt_right RALT E  &mt_right RCTRL I  &mt_right RGUI A  &mt_right RHYPR SEMI
-&caps_word          &kp Q            &kp J             &kp V            &kp D             &kp K         &kp X        &kp H              &kp FSLH          &kp COMMA          &kp DOT           &kp BSLH
+&none               &kp W            &kp L             &kp Y            &kp P             &kp B         &kp Z        &kp F              &kp O             &kp U              &kp SQT             &kp MINUS
+&mt_left LHYPR ESC  &mt_left LGUI C  &mt_left LCTRL R  &mt_left LALT S  &mt_left LSHFT T  &kp G         &kp M        &mt_right RSHFT N  &mt_right RALT E  &mt_right RCTRL I  &mt_right RGUI A    &mt_right RHYPR SEMI
+&caps_word          &kp Q            &kp J             &kp V            &kp D             &kp K         &kp X        &kp H              &kp FSLH          &kp COMMA          &lt_eager SLOW DOT  &kp BSLH
                                                        &lt EXT TAB      &lt NAV SPACE     &lt FUN BSPC  &lt SYM DEL  &lt NUM RET
             >;
         };
@@ -56,7 +55,7 @@
             bindings = <
 &trans  &kp Q            &kp W             &kp E            &kp R             &kp T     &kp Y   &kp U              &kp I             &kp O              &kp P                &trans
 &trans  &mt_left LGUI A  &mt_left LCTRL S  &mt_left LALT D  &mt_left LSHFT F  &kp G     &kp H   &mt_right RSHFT J  &mt_right RALT K  &mt_right RCTRL L  &mt_right RGUI SEMI  &mt_right RHYPR SQT
-&trans  &kp Z            &kp X             &kp C            &kp V             &kp B     &kp N   &kp M              &kp COMMA         &kp DOT            &kp FSLH             &trans
+&trans  &kp Z            &kp X             &kp C            &kp V             &kp B     &kp N   &kp M              &kp COMMA         &kp DOT            &lt_eager SLOW FSLH  &trans
                                            &trans           &trans            &trans    &trans  &trans
             >;
         };
@@ -64,9 +63,9 @@
         GAME {
             display-name = "Game";
             bindings = <
-&trans     &td_n1_n2  &kp Q  &kp W   &kp E      &kp R     &kp T   &kp Y     &kp UP    &kp I      &kp O    &kp P
-&kp ESC    &td_n3_n4  &kp A  &kp S   &kp D      &kp F     &kp G   &kp LEFT  &kp DOWN  &kp RIGHT  &kp L    &kp SEMI
-&kp LCTRL  &kp LSHFT  &kp Z  &kp X   &kp C      &kp V     &kp B   &kp N     &kp M     &kp COMMA  &kp DOT  &kp FSLH
+&trans     &td_n1_n2  &kp Q  &kp W   &kp E      &kp R     &kp T   &kp Y     &kp UP    &kp I      &kp O               &kp P
+&kp ESC    &td_n3_n4  &kp A  &kp S   &kp D      &kp F     &kp G   &kp LEFT  &kp DOWN  &kp RIGHT  &kp L               &kp SEMI
+&kp LCTRL  &kp LSHFT  &kp Z  &kp X   &kp C      &kp V     &kp B   &kp N     &kp M     &kp COMMA  &lt_eager SLOW DOT  &kp FSLH
                              &trans  &kp SPACE  &trans    &trans  &trans
             >;
         };
@@ -118,16 +117,6 @@
 &none  &kp FSLH   &kp N4  &kp N5  &kp N6     &kp STAR     &none  &kp RSHFT  &kp RALT  &kp RCTRL  &kp RGUI  &kp RHYPR
 &none  &kp DOT    &kp N1  &kp N2  &kp N3     &kp EQUAL    &none  &none      &none     &none      &none     &none
                           &kp N0  &kp SPACE  &kp BSPC     &none  &none
-            >;
-        };
-
-        PTR {
-            display-name = "Pointer";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &m_mo_slow_trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
             >;
         };
 

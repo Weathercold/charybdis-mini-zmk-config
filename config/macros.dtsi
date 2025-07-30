@@ -1,14 +1,4 @@
 / {
     macros {
-        m_mo_slow_trans: m_mo_slow_trans {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&mo 10 &trans>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 10 &trans>;
-        };
     };
 };
