@@ -7,7 +7,7 @@
 
     /* layer-8 scroll override */
     scroller: scroller {
-        layers           = <9>;
+        layers           = <8>;
         input-processors = <
             &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
             &zip_scroll_scaler 1 15                          // Scales the scroll speed
@@ -18,7 +18,7 @@
 
     /* layer-9 slow-pointer override */
     slow_pointer: slow_pointer {
-        layers           = <10>;
+        layers           = <9>;
         input-processors = <&zip_xy_scaler 2 6>;
     };
 };
