@@ -1,5 +1,14 @@
 [![.github/workflows/build.yml](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/actions/workflows/build.yml/badge.svg)](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/actions/workflows/build.yml)
 
+> [!NOTE]
+> This config is a fork of [280Zo/charybdis-mini-zmk-config](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware).
+> The following guide (except the keymap) was written for the original config
+> and may not be up to date with my config.
+
+> [!WARNING]
+> This config might not be updated anymore as I switched to a different
+> keyboard. That being said, you can still take inspiration from my layout.
+
 ## Intro
 
 This repository offers pre-configured ZMK firmware designed for [Wireless Charybdis keyboards](https://github.com/280Zo/charybdis-wireless-mini-3x6-build-guide?tab=readme-ov-file). It supports both Bluetooth/USB and Dongle configurations and uses the latest input listener and processors to act as a bridge between the trackball and the rest of the system.
@@ -23,7 +32,7 @@ Download your choice of firmware from the Releases page. Choose a combination of
 7. Repeat these steps for all devices.
 8. You should now be able to use your keyboard
 
-> [!NOTE]  
+> [!NOTE]
 > If you are flashing the firmware for the first time, or if you're switching between the dongle and the Bluetooth/USB configuration, flash the reset firmware to all the devices first
 
 ### Overview & Usage
